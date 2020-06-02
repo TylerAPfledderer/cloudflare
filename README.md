@@ -1,6 +1,4 @@
-# CloudFlare 
- 
-# From Code To Mockup
+# CloudFlare - From Mockup to Code
 
 
 **These projects are not required to complete your Treehouse Techdegree. They are a supplement to your learning and can be great additions to your portfolio as full projects.**
