@@ -1,0 +1,22 @@
+// ----------------------- //
+//     Import Partials     //
+// ----------------------- //
+
+// Utilities
+@import
+    'utilities/variables',
+    'utilities/mixins',
+    'utilities/functions';
+
+// Base
+@import
+    'base/normalize',
+    'base/typography',
+    'base/base';
+
+// Layout
+@import
+    'layout/navigation',
+    'layout/main',
+    'layout/form',
+    'layout/footer';

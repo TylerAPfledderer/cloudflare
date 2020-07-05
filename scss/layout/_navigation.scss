@@ -1,0 +1,47 @@
+// =============================================
+//              Navigation                         
+// =============================================
+
+header {
+    @include flexy($dir: column, $items: center);
+}
+
+#nav-dropdown {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0;
+    text-align: center;
+    &:after {
+        content: '\203A';
+        font-size: 60px;
+        line-height: 0;
+        display: block;
+        position: absolute;
+        right: 10%;
+        top: 22px;
+        transform: rotate(90deg);
+        transition: all .5s;
+        transform-origin: center center;
+    }
+    &.clicked:after {
+        transform: rotate(270deg);
+    }
+}
+
+.main-nav {
+    @include flexy($dir: column, $items: center);
+    width: 100%;
+    max-width: 1024px;
+    overflow-y: hidden;
+    transition: all, .5s;
+
+    @include respond-to(medium) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &.hidden {
+        max-height: 0;
+    }
+}
