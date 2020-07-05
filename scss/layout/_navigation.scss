@@ -4,6 +4,47 @@
 
 header {
     @include flexy($dir: column, $items: center);
+
+    /* Add margin and color to only the login button as it appears in the header */
+    >.login__btn {
+        margin: 20px 0;
+        background-color: $trim-color;
+    }
+
+    @include respond-to(medium) {
+        @include flexy($dis: null, $dir: row, $wrap: wrap, $just: space-between);
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    @include respond-to(large) {
+        @include flexy(null, $wrap: nowrap);
+        max-width: 1440px;
+    }
+}
+
+.brand-logo {
+    @include flexy($just: center, $items: center);
+    padding: 10px 0;
+    width: 50%;
+
+    &>svg {
+        width: 30%;
+        max-width: 100px;
+    }
+
+    &>.logo__text {
+        margin-left: 10px;
+    }
+
+    @include respond-to(medium) {
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    @include respond-to(large) {
+        width: auto;
+    }
 }
 
 #nav-dropdown {
@@ -12,6 +53,11 @@ header {
     background-color: black;
     padding: 10px 0;
     text-align: center;
+
+    &:focus {
+        outline: none;
+    }
+
     &:after {
         content: '\203A';
         font-size: 60px;
@@ -21,27 +67,105 @@ header {
         right: 10%;
         top: 22px;
         transform: rotate(90deg);
-        transition: all .5s;
+        transition: all .3s linear;
         transform-origin: center center;
     }
+
     &.clicked:after {
         transform: rotate(270deg);
+    }
+
+    @include respond-to(medium) {
+        display: none;
     }
 }
 
 .main-nav {
-    @include flexy($dir: column, $items: center);
+    background-color: #ddd;
+    box-shadow: inset 0 -5px 7px 0 rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 1024px;
-    overflow-y: hidden;
-    transition: all, .5s;
+    max-height: 374px;
+    padding: 20px 0;
 
-    @include respond-to(medium) {
-        width: 80%;
+    overflow-y: auto;
+    transition: all .3s linear;
+
+    &.hidden {
+        overflow-y: hidden;
+        max-height: 0;
+        padding: 0;
+    }
+
+    &__list {
+        @include flexy($dir: column, $items: center);
+        width: 90%;
         margin: 0 auto;
     }
 
-    &.hidden {
-        max-height: 0;
+    &__item {
+        width: 100%;
+    }
+
+    &__item+&__item {
+        margin-top: 10px;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        color: $alt-text-color;
+        font-weight: 400;
+        letter-spacing: 1px;
+        background-color: #333;
+        display: block;
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    /* -- To aid in the visual of the dropdown transition -- */
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @include respond-to(medium) {
+        background: none;
+        box-shadow: none;
+        width: 80%;
+        margin-right: 10px;
+
+        &__list {
+            @include flexy($dis: null, $dir: row);
+            width: auto;
+        }
+
+        &__item+&__item {
+            margin-top: 0;
+        }
+
+        &__link {
+            background: none;
+        }
+    }
+
+    @include respond-to(large) {
+        margin: 0 10px;
+
+        &__list {
+            @include flexy(null, $just: center);
+        }
+
+        &__item {
+            width: 100%;
+            max-width: 100px;
+        }
+
+        &__link {
+            padding: 0;
+        }
     }
 }

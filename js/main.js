@@ -27,7 +27,6 @@ window.addEventListener("resize", () => {
 const dropdown = document.querySelector("#nav-dropdown");
 
 // On click or "Enter". Toggle the nav menu into view (for mobile) and rotate the chevron glyph
-
 const dropdownToggle = () => {
     dropdown.classList.toggle("clicked");
     mainNav.classList.toggle("hidden");

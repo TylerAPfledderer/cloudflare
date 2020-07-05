@@ -1,3 +1,72 @@
 // =============================================
 //              Form                         
 // =============================================
+
+%center-self {
+    align-self: center;
+}
+
+.login {
+    @include flexy($dir: column);
+    width: 80%;
+    margin: 0 auto;
+
+    padding-top: 30px;
+    & > &__btn {
+        @extend %center-self;
+        /* Assist in button click transition via :active */
+        border-bottom: 4px solid rgba(0,0,0,0.2);
+
+        &:active {
+            border-bottom: none;
+            border-top: 4px solid white;
+        }
+
+        @include respond-to(large) {
+            align-self: flex-start;
+        }
+    }
+
+    &__title {
+        @extend %center-self;
+        color: $alt-text-color;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        /* Reset Border */
+        border: none;        
+        /* Set new border */
+        border-bottom: 5px solid #aaa;
+
+        padding-left: 5px;
+        font-size: $h5;
+        transition: border-bottom .5s;
+
+        &:focus {
+            border-bottom-color: $brand-color;
+            outline: none;
+        }
+
+        &:focus + label {
+            color: black;
+            font-weight: 900;
+        }
+
+        & ~ & {
+            margin-top: 20px;
+        }
+    }
+
+    &__forgot-pswd {
+        @extend %small-text;
+        align-self: flex-end;
+        margin: 10px 0;
+    }
+
+}
+
+label {
+    @extend %small-text;
+}

@@ -1,3 +1,22 @@
 // =============================================
 //              Footer                         
 // =============================================
+
+.footer {
+    padding: 20px 0;
+    &__divider {
+        width: 200px;
+        margin: 0 auto 10px;
+        border: 1px solid $trim-color;
+    }
+
+    &__text {
+        text-align: center;
+    }
+
+    &__link {
+        color: $trim-color;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}

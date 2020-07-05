@@ -1,3 +1,111 @@
 // =============================================
 //              Main                         
 // =============================================
+
+main {
+    @include flexy($dir: column);
+    background-color: white;
+    max-width: 1024px;
+
+    @include respond-to(medium) {
+        @include flexy($dis: null, $dir: row);
+        width: 90%;
+        margin: 150px auto 50px;
+        height: 500px;
+        box-shadow: 0 5px 5px 2px rgba($color: #000000, $alpha: 0.2);
+    }
+}
+
+.short-features {
+    order: 1;
+    background-image: url("../../images/bg-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $brand-color;
+    background-blend-mode: soft-light;
+    padding: 30px 5%;
+
+    &__brand-logo {
+        @include flexy($dir: column, $items: center);
+
+        &>svg {
+            width: 150px;
+        }
+
+        &>.logo__text {
+            display: block;
+            font-size: $h5;
+        }
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item:before {
+        content: "\2022";
+        display: inline-block;
+        width: 20px;
+        margin-left: -1em;
+        font-size: 30px;
+        line-height: 1;
+        position: relative;
+        top: 5px;
+    }
+
+    @include respond-to(medium) {
+        order: unset;
+        flex-basis: 40%;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &__list {
+            margin-top: 50px;
+        }
+
+        &__item {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.right-section {
+    flex-basis: 60%;
+    position: relative;
+}
+
+/* Style Login button that appears in the form and in the header */
+.login__btn {
+    // This color only shows up for the button in the form. See line 11 in _navigation.scss
+    background-color: $brand-color;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20% / 50%;
+}
+
+.social {
+    @include flexy($just: center);
+    margin-top: 10px;
+
+    &__link {
+        width: 25px;
+        padding: 10px;
+        align-self: center;
+
+        &>svg>path {
+            fill: #444;
+        }
+
+        &:hover>svg>path {
+            fill: $brand-color;
+        }
+    }
+
+    @include respond-to(large) {
+        position: absolute;
+        right: 50px;
+        bottom: 165px;
+    }
+}

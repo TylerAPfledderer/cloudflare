@@ -9,11 +9,16 @@ $h1: 4.209em;
 $h2: 3.157em;
 $h3: 2.369em;
 $h4: 1.777em;
-$h5: 1.333em;
-$small-text: 0.75em;
+$h5: 1.333em; 
 
 // -- Color Scheme --
 $base-color: #41444c;
 $alt-text-color: #aaa;
 $brand-color: #1962a5;
 $trim-color: #2e7ac3;
+
+// Multiple elements use this size with this color, so set as placeholder instead.
+%small-text {
+    font-size: 0.75em;
+    color: $alt-text-color;
+}

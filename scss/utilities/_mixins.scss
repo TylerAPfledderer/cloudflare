@@ -18,9 +18,8 @@
     }
 
     // Direction and Wrap
-
-    flex-flow: $dir $wrap;
-    -ms-flex-flow: $dir $wrap;
+    flex-direction: $dir;
+    -ms-flex-direction: $dir;
 
     @if ($dir=='column') {
         -webkit-box-orient: vertical;
@@ -41,6 +40,9 @@
         -webkit-box-orient: vertical;
         -webkit-box-direction: reverse;
     }
+
+    flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
 
     // Justify   
 
