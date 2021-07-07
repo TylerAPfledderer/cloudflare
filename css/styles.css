@@ -637,7 +637,7 @@ main {
 
 .short-features {
   order: 1;
-  background-image: url("../../images/bg-image.jpg");
+  background-image: url("../images/bg-image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -809,3 +809,5 @@ main {
   font-weight: 600;
   letter-spacing: 1px;
 }
+
+/*# sourceMappingURL=styles.css.map */
